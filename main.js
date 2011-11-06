@@ -12,10 +12,16 @@
 *                                                                             *
 ******************************************************************************/
 
+var p, xz_plane, yz_plane;
+
 function main() {
-    var p = new DrawableObject(10,10,10,"ship.png");
-    var xz_plane = document.getElementById("xz_plane");
-    var yz_plane = document.getElementById("yz_plane");
+    p = new DrawableObject(10,10,10,"ship.png");
+    xz_plane = document.getElementById("xz_plane");
+    yz_plane = document.getElementById("yz_plane");
+    setInterval(draw,1000);
+}
+
+function draw() {
     p.draw_yz(yz_plane);
     p.draw_xz(xz_plane);
 }
