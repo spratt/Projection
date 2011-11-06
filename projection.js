@@ -34,11 +34,14 @@ DrawableObject.prototype.draw_xz = function(xz_plane) {
     if(i < 0) {
 	var img = new Image();
 	img.src = this.img_src;
+	img.style.position="relative";
 	xz_plane.appendChild(img);
 	i = this.planes.length;
 	this.planes[i] = xz_plane;
 	this.images[i] = img;
     }
+    this.images[i].style.top=this.x;
+    this.images[i].style.left=this.z;
     console.log("Done drawing xz.");
 }
 
@@ -48,10 +51,13 @@ DrawableObject.prototype.draw_yz = function(yz_plane) {
     if(i < 0) {
 	var img = new Image();
 	img.src = this.img_src;
+	img.style.position="relative";
 	yz_plane.appendChild(img);
 	i = this.planes.length;
 	this.planes[i] = yz_plane;
 	this.images[i] = img;
     }
+    this.images[i].style.top=this.y;
+    this.images[i].style.left=this.z;
     console.log("Done drawing yz.");
 }
